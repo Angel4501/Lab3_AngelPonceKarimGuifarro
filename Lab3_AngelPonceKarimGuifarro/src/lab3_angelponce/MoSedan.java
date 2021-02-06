@@ -8,18 +8,16 @@ public class MoSedan extends Modelos{
     //AndroidPlay es SI o NO
     ArrayList<String> asistentesDeConduccion = new ArrayList();
 
-    public MoSedan() {
+
+    public MoSedan(String nombre, String anioFabricacion, String tipoMotor, String cilindradaMotor, String precio, String tecnologias) {
+        super(nombre, anioFabricacion, tipoMotor, cilindradaMotor, precio, tecnologias);
     }
     
-    public MoSedan(String AndroidPlay, String AndroidAuto, ArrayList<String> asistentesDeConduccion) {
-        this.AndroidAuto=AndroidAuto;
-        this.AndroidPlay=AndroidPlay;
-        this.asistentesDeConduccion=asistentesDeConduccion;
-    }
+    
 
     @Override
     public String toString() {
-        return "MoSedan{" + "AndroidPlay=" + AndroidPlay + ", AndroidAuto=" + AndroidAuto + ", asistentesDeConduccion=" + asistentesDeConduccion + '}';
+        return super.toString()+"MoSedan{" + "AndroidPlay=" + AndroidPlay + ", AndroidAuto=" + AndroidAuto + ", asistentesDeConduccion=" + asistentesDeConduccion + '}';
     }
     
     

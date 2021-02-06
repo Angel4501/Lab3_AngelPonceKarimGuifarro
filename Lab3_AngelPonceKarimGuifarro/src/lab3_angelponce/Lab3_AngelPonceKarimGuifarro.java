@@ -8,8 +8,9 @@ static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         
         ArrayList<Corporaciones> corp = new ArrayList();
-        ArrayList<Corporaciones> corporaciones = new ArrayList();
+        //ArrayList<Corporaciones> corporaciones = new ArrayList();
         ArrayList<Marcas> marcas = new ArrayList();
+        ArrayList<Modelos> modelos = new ArrayList();
         int opcion=0;
         while(opcion!=5){
             System.out.println("|MENÚ|");
@@ -39,11 +40,13 @@ static Scanner sc = new Scanner(System.in);
                             System.out.println("Cantidad de autos que se pueden fabricar: ");
                             int cantAutos=sc.nextInt();
                             corp.add(new Corporaciones(nombre,sede,yearfoundation,presidente,empleados,cantAutos));
-                            System.out.println("Listo, para agregar marca vaya a la opcion 2: Marcas");
+                            System.out.println("Listo, para poder agregar marca vaya a la opcion 2: Marcas");
                             break;
                         case 2:
                             System.out.println("Listando corporaciones...");
-                            
+                            for (Object t : corp) {
+                                System.out.println(corp.indexOf(t)+":\n"+t);
+                            }
                             break;
                         case 3:
                             System.out.println("Modificando corporaciones...");
@@ -72,6 +75,7 @@ static Scanner sc = new Scanner(System.in);
                                 }
                                 System.out.println("Ingrese la posicion de la corporacion: ");
                                 int p=sc.nextInt();
+                                
                                 System.out.println(corp.get(p).getNombre());
                                 String nombre, slogan, fundador, presidente;
                                 int yearfundacion, yearIntegro, numModelos; //número de modelos: size del arraylist Modelos;
@@ -90,11 +94,16 @@ static Scanner sc = new Scanner(System.in);
                                 yearIntegro=sc.nextInt();
                                 System.out.println("Total de ventas: ");
                                 totalVentas=sc.nextDouble();
+                                marcas.add(new Marcas(nombre,slogan,fundador,presidente,yearfundacion,yearIntegro,totalVentas));
+                                corp.get(p).setMarcas(marcas);
+                                System.out.println("Se agregó la marca");
                             }
                             break;
                         case 2:
                             System.out.println("Listando marcas...");
-                            
+                            for(int i=0; i<marcas.size(); i++){
+                                System.out.println(marcas.get(i));
+                            }
                             break;
                         case 3:
                             System.out.println("Modificando marcas...");
@@ -102,6 +111,7 @@ static Scanner sc = new Scanner(System.in);
                             break;
                         case 4:
                             System.out.println("Elimando marcas...");
+                            System.out.println("Ingrese posicion de la marca: ");
                             
                             break;
                     }
@@ -110,8 +120,63 @@ static Scanner sc = new Scanner(System.in);
                     System.out.println("3. MODELOS");
                     switch(CRUD()){
                         case 1:
-                            System.out.println("Agregando modelos...");
-                            
+                            if(marcas.isEmpty()){
+                                System.out.println("No se pueden agregar modelos, no hay marcas creadas");
+                            }
+                            else{
+                                System.out.println("Agregando modelos...");
+                                System.out.println("Corporaciones disponibles: ");
+                                for(int i=0; i<corp.size(); i++){
+                                    System.out.println("Posicion "+i+": "+corp.get(i).getNombre());
+                                }
+                                System.out.println("Ingrese la posicion de la corporacion: ");
+                                int p=sc.nextInt();
+                                
+                                System.out.println("Marcas existentes de esa Corporacion:");
+                                for(int i=0; i<corp.get(p).getMarcas().size(); i++){
+                                    System.out.println(i+" "+corp.get(p).getMarcas().get(i).getNombre());
+                                }
+                                System.out.println("Ingrese posicion de marca: ");
+                                int pos=sc.nextInt();
+                                
+                                String nombre, anioFabricacion, tipoMotor, cilindradaMotor, precio, tecnologias; 
+                                System.out.println("Ingrese nombre: ");
+                                nombre=sc.next();
+                                System.out.println("Anio de fabricacion: ");
+                                anioFabricacion=sc.next();
+                                System.out.println("Tipo de mototr: ");
+                                tipoMotor=sc.next();
+                                System.out.println("Cilindrada de motor: ");
+                                cilindradaMotor=sc.next();
+                                System.out.println("Ingrese precio: ");
+                                precio=sc.next();
+                                System.out.println("Tecnologias: ");
+                                tecnologias=sc.next();
+                                System.out.println("Carrocerias");
+                                System.out.println("1. Hatchback");
+                                System.out.println("2. Sedan");
+                                System.out.println("3. SUV");
+                                System.out.println("Eliga: ");
+                                int elig=sc.nextInt();
+                                if(elig==1){
+                                    int capacidadMaletero, longitudTotal, bolsasDeAire;
+                                    System.out.println("Capacidad de maletero: ");
+                                    capacidadMaletero=sc.nextInt();
+                                    System.out.println("Longitud: ");
+                                    longitudTotal=sc.nextInt();
+                                    System.out.println("Bolsas de aire cantidad: ");
+                                    bolsasDeAire=sc.nextInt();
+                                    modelos.add(new MoHatchback(capacidadMaletero,longitudTotal,bolsasDeAire,nombre,anioFabricacion,tipoMotor,cilindradaMotor,precio,tecnologias));
+                                    marcas.get(pos).setModelos(modelos);
+                                }
+                                else if(elig==2){
+                                    
+                                }
+                                else if(elig==3){
+                                    
+                                }
+                                
+                            }
                             break;
                         case 2:
                             System.out.println("Listando modelos...");

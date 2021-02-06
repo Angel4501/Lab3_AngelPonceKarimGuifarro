@@ -1,9 +1,12 @@
 package lab3_angelponce;
 
+import java.util.ArrayList;
+
 public class Marcas {
     String nombre, slogan, fundador, presidente;
     int yearfundacion, yearIntegro, numModelos; //número de modelos: size del arraylist Modelos;
     double totalVentas;
+    ArrayList<Modelos> modelos = new ArrayList();
     
     public Marcas(String nombre, String slogan, String fundador, String presidente, 
             int yearfundacion, int yearIntegro, int numModelos, double totalVentas) {
@@ -17,7 +20,8 @@ public class Marcas {
         this.totalVentas = totalVentas;
     }
 
-    public Marcas(String nombre, String slogan, String fundador, String presidente, int yearfundacion, int yearIntegro, double totalVentas) {
+    public Marcas(String nombre, String slogan, String fundador, String presidente, 
+        int yearfundacion, int yearIntegro, double totalVentas) {
         this.nombre = nombre;
         this.slogan = slogan;
         this.fundador = fundador;
@@ -27,7 +31,13 @@ public class Marcas {
         this.totalVentas = totalVentas;
     }
     
+    public void setModelos(ArrayList<Modelos> modelos ){
+        this.modelos=modelos;
+    }
     
+    public ArrayList<Modelos> getModelos(){
+        return modelos;
+    }
 
     public String getNombre() {
         return nombre;
@@ -95,10 +105,11 @@ public class Marcas {
 
     @Override
     public String toString() {
-        return "Marcas{" + "nombre=" + nombre + ", slogan=" + slogan 
-                + ", fundador=" + fundador + ", presidente=" + presidente 
-                + ", yearfundacion=" + yearfundacion + ", yearIntegro=" + yearIntegro 
-                + ", numModelos=" + numModelos + ", totalVentas=" + totalVentas + '}';
+        return "Marcas\n{" + "\nnombre=" + nombre + ",\nslogan=" + slogan 
+                + ",\nfundador=" + fundador + ",\npresidente=" + presidente 
+                + "\nyearfundacion=" + yearfundacion + "\nyearIntegro=" + yearIntegro 
+                + ",\nnumModelos=" + numModelos + ",\ntotalVentas=" + totalVentas 
+                + '\n'+modelos+'}';
     }
     
     

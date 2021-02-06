@@ -4,11 +4,14 @@ public class MoHatchback extends Modelos{
     
     int capacidadMaletero, longitudTotal, bolsasDeAire;
 
-    public MoHatchback(int capacidadMaletero, int longitudTotal, int bolsasDeAire) {
+    public MoHatchback(int capacidadMaletero, int longitudTotal, int bolsasDeAire, String nombre, String anioFabricacion, String tipoMotor, String cilindradaMotor, String precio, String tecnologias) {
+        super(nombre, anioFabricacion, tipoMotor, cilindradaMotor, precio, tecnologias);
         this.capacidadMaletero = capacidadMaletero;
         this.longitudTotal = longitudTotal;
         this.bolsasDeAire = bolsasDeAire;
     }
+
+    
 
     public int getCapacidadMaletero() {
         return capacidadMaletero;
@@ -36,7 +39,7 @@ public class MoHatchback extends Modelos{
 
     @Override
     public String toString() {
-        return "MoHatchback{" + "capacidadMaletero=" + capacidadMaletero + ", longitudTotal=" + longitudTotal + ", bolsasDeAire=" + bolsasDeAire + '}';
+        return super.toString()+"MoHatchback{" + "capacidadMaletero=" + capacidadMaletero + ", longitudTotal=" + longitudTotal + ", bolsasDeAire=" + bolsasDeAire + '}';
     }
     
     

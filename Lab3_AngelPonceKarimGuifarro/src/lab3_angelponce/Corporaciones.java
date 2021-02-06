@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class Corporaciones {
     String nombre, sede, presidente;  
     int yearfoundation, numEmpleados, cantAutos;  
-    ArrayList corp = new ArrayList();
     ArrayList<Marcas> marcas = new ArrayList();
-
+    //ArrayList<Corporaciones> corp = new ArrayList();
+    
     public Corporaciones(String nombre, String sede, int yearfoundation, 
         String presidente, int numEmpleados, int cantAutos) {
         this.nombre = nombre;
@@ -19,8 +19,8 @@ public class Corporaciones {
         this.cantAutos = cantAutos;
     }
     
-    public Corporaciones(ArrayList corp, ArrayList<Marcas> marcas){
-        this.corp=corp;
+ 
+    public Corporaciones(ArrayList<Marcas> marcas){
         this.marcas=marcas;
     }
 
@@ -72,14 +72,6 @@ public class Corporaciones {
         this.cantAutos = cantAutos;
     }
 
-    public ArrayList getCorp() {
-        return corp;
-    }
-
-    public void setCorp(ArrayList corp) {
-        this.corp = corp;
-    }
-
     public ArrayList<Marcas> getMarcas() {
         return marcas;
     }
@@ -93,7 +85,7 @@ public class Corporaciones {
         return "Corporaciones{" + "nombre=" + nombre + ", sede=" + sede 
                 + ", presidente=" + presidente + ", yearfoundation=" + yearfoundation 
                 + ", numEmpleados=" + numEmpleados + ", cantAutos=" + cantAutos 
-                + ", corp=" + corp + ", marcas=" + marcas + '}';
+                + ", marcas=" + marcas + '}';
     }
     
     
