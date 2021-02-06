@@ -108,7 +108,7 @@ public class Marcas {
         return "Marcas\n{" + "\nnombre=" + nombre + ",\nslogan=" + slogan 
                 + ",\nfundador=" + fundador + ",\npresidente=" + presidente 
                 + "\nyearfundacion=" + yearfundacion + "\nyearIntegro=" + yearIntegro 
-                + ",\nnumModelos=" + numModelos + ",\ntotalVentas=" + totalVentas 
+                + ",\nnumModelos=" + modelos.size() + ",\ntotalVentas=" + totalVentas 
                 + '\n'+modelos+'}';
     }
     

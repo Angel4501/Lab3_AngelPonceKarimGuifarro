@@ -6,8 +6,9 @@ public class MoSUV extends Modelos {
     int cantPasajeros; 
     String nombreNavegador;
 
-    public MoSUV(int cantPasajeros, String nombreNavegador, String nombre, String anioFabricacion, String tipoMotor, String cilindradaMotor, String precio, String tecnologias) {
+    public MoSUV(String cuatroXcuatro, int cantPasajeros, String nombreNavegador, String nombre, String anioFabricacion, String tipoMotor, String cilindradaMotor, String precio, String tecnologias) {
         super(nombre, anioFabricacion, tipoMotor, cilindradaMotor, precio, tecnologias);
+        this.cuatroXcuatro=cuatroXcuatro;
         this.cantPasajeros = cantPasajeros;
         this.nombreNavegador = nombreNavegador;
     }
@@ -39,7 +40,7 @@ public class MoSUV extends Modelos {
 
     @Override
     public String toString() {
-        return super.toString()+"MoSUV{" + "cuatroXcuatro=" + cuatroXcuatro + ", cantPasajeros=" + cantPasajeros + ", nombreNavegador=" + nombreNavegador + '}';
+        return super.toString()+"\nMoSUV{" + "cuatroXcuatro=" + cuatroXcuatro + ", cantPasajeros=" + cantPasajeros + ", nombreNavegador=" + nombreNavegador + '}';
     }
     
     

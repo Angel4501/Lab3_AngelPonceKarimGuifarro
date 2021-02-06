@@ -39,7 +39,7 @@ public class MoHatchback extends Modelos{
 
     @Override
     public String toString() {
-        return super.toString()+"MoHatchback{" + "capacidadMaletero=" + capacidadMaletero + ", longitudTotal=" + longitudTotal + ", bolsasDeAire=" + bolsasDeAire + '}';
+        return super.toString()+"\nMoHatchback{" + "capacidadMaletero=" + capacidadMaletero + ", longitudTotal=" + longitudTotal + ", bolsasDeAire=" + bolsasDeAire + '}';
     }
     
     
